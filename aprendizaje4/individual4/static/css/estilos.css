@@ -1,0 +1,17 @@
+#bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.nav-link{
+    color:whitesmoke;
+    text-decoration: overline;
+}
+
+h1{
+    text-align: center;
+    color:black;
+    margin-top: 10vh;
+}
