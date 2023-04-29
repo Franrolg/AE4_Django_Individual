@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, TemplateView
 from django.contrib.auth.models import User
-from .forms import FormularioUsuario
+from .forms import FormularioUsuario, RegistrarUsuarioForm
 
 # Create your views here.
 
@@ -32,4 +32,12 @@ class FormularioUsuarioView(TemplateView):
         return render(request, self.template_name, {'form': form})
     
 def formulario_usuario(request):
-    return render(request, 'usuario.html')
+    if request.method == "POST":
+        form = RegistrarUsuarioForm(data=request.POST)
+        if form.is_valid():
+            cliente = form.save(commit=False)
+            cliente.save()
+        return render(request, 'usuario.html', {'respuesta': 'ok'})
+    else:
+        form = RegistrarUsuarioForm()
+        return render(request, 'usuario.html', {'form': form})

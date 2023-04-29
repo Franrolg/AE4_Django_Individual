@@ -25,11 +25,29 @@
 <section class="seccion">
     <div class="card-body">
         <h5 class="card-title">Formulario de Usuarios</h5>
-        <form action="/usuario" method="post">
+        <form action="/usuario/" method="POST">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_div }}
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
 </section>
+
+
+<section class="seccion">
+    <div class="card-body">
+        <h5 class="card-title">Formulario de Usuarios</h5>
+        <form action="/usuario/" method="POST">
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="form-group">
+                <label>{{fm.label}}</label>
+                {{fm}}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</section>
+
 {% endblock %}
