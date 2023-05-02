@@ -1,8 +1,9 @@
 from django.urls import path
 
-from individual4.views import *
+from . import views
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('usuario/', formulario_usuario, name='usuario')
+    path('', views.index, name='index'),
+    path('registro-usuario/', views.formulario_usuario, name='registro usuarios'),
+    path('lista-usuarios/', views.lista_usuarios , name='lista usuarios'),
 ]

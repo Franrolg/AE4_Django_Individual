@@ -21,7 +21,7 @@ class RegistrarUsuarioForm(forms.ModelForm):
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password']
 
-        labels = {'username': 'Usuario', 'first_name': 'Nombre', 'last_name': 'Apellido', 'email': 'Correo Electrónico', 'password': 'Contraseña'}
+        labels = {'username': '', 'first_name': '', 'last_name': '', 'email': '', 'password': ''}
 
         widgets = {'username': forms.TextInput(attrs={'placeholder': 'Usuario', 'class':'form-control'}),
                   'first_name': forms.TextInput(attrs={'placeholder': 'Nombre', 'class':'form-control'}),
